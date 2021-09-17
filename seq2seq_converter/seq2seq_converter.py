@@ -395,7 +395,7 @@ def main():
                 inputs, targets = process_decontext_qanli(examples)
             else:
                 inputs, targets = process_decontext_train_and_dev(examples)
-        elif data_args.task.startswith("question_converter"):
+        elif data_args.task.startswith("question_convert"):
             # ensure both questions and answers are not none
             if data_args.data_source == 'qa-nli':
                 inputs, targets = process_question_converter_qanli(examples)

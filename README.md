@@ -37,13 +37,18 @@ The data files are formatted as jsonlines; each example is described as the foll
 
 
 ## Models
-Work in Progress ... 
-### Question Converter
 
-### Decontextualizer
+### Getting started
+`git clone https://github.com/jifan-chen/QA-Verification-Via-NLI.git`
+
+Install the dependencies by running 
+`pip install -r requirements.txt`
+
+### Question Converter & Decontextualizer
+See [README](https://github.com/jifan-chen/QA-Verification-Via-NLI/tree/master/seq2seq_converter) in seq2seq_converter.
 
 ### NQ-NLI
-
+coming soon
 
 ## Contact 
 
