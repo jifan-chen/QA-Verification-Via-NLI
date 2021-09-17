@@ -2,7 +2,7 @@
 
 working_dir="./model_data"
 data_url='https://docs.google.com/uc?export=download&id=12yj_SQXfFZ5MBTojzcr5A1sLviEP07xx'
-model_3b_url="https://docs.google.com/uc?export=download&id=1zQEKSIuJmX08FxE5JYLwnj4v5Y8TbtYz"
+model_3b_url="https://docs.google.com/uc?export=download&id=1LNjhjxP6Lamb7YP7x7gTKmd60HIDE4Tr"
 dataset_path="${working_dir}/nq-nli-dev.jsonl"
 decontextualizer_3b_path="${working_dir}/decontextualizer-t5-3b.tar.gz"
 decontextualizer_base_path="${working_dir}/decontextualizer-t5-base.tar.gz"
@@ -23,27 +23,29 @@ if [[ ! -f ${dataset_path} ]]; then
 fi
 
 if [[ ! -f ${decontextualizer_3b_path} ]]; then
-    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1zQEKSIuJmX08FxE5JYLwnj4v5Y8TbtYz' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1zQEKSIuJmX08FxE5JYLwnj4v5Y8TbtYz" -O "${decontextualizer_3b_path}" && rm -rf /tmp/cookies.txt
+    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1LNjhjxP6Lamb7YP7x7gTKmd60HIDE4Tr' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1LNjhjxP6Lamb7YP7x7gTKmd60HIDE4Tr" -O "${decontextualizer_3b_path}" && rm -rf /tmp/cookies.txt
 fi
 
+
 if [[ ! -f ${decontextualizer_base_path} ]]; then
-    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1zQEKSIuJmX08FxE5JYLwnj4v5Y8TbtYz' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1zQEKSIuJmX08FxE5JYLwnj4v5Y8TbtYz" -O "${decontextualizer_base_path}" && rm -rf /tmp/cookies.txt
+    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1kkQSzjUNzbpR55TS4aXF_bxgsRNwo5hy' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1kkQSzjUNzbpR55TS4aXF_bxgsRNwo5hy" -O "${decontextualizer_base_path}" && rm -rf /tmp/cookies.txt
 fi
 
 
 if [[ ! -d ${model_3b_extraction_path} ]]; then
     mkdir ${model_3b_extraction_path}
-    echo "extracting files ..."
+    echo "extracting files from ${decontextualizer_3b_path}..."
     tar -xzvf ${decontextualizer_3b_path} -C ${model_3b_extraction_path}
 fi
 
 if [[ ! -d ${model_base_extraction_path} ]]; then
     mkdir ${model_base_extraction_path}
-    echo "extracting files ..."
+    echo "extracting files from ${decontextualizer_base_path}..."
     tar -xzvf ${decontextualizer_base_path} -C ${model_base_extraction_path}
 fi
 
 echo "Running the decontextualizer"
+# to run a base-model, simply change the model path
 python -m seq2seq_converter.seq2seq_converter \
 	--model_name_or_path ${model_3b_extraction_path} \
 	--do_train False \

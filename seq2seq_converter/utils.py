@@ -260,10 +260,6 @@ def process_esnli_train_and_dev(examples: Dict):
             sp1h1 = sorted(sp1h1.split(','))
             sp2h1 = sorted(sp2h1.split(','))
 
-            # print(sp1h1, type(sp1h1))
-            # print(sp2h1, type(sp2h1))
-            # input()
-
             if sp1h1[0] != EMPTY_ANNOTATION:
                 sp1h1 = [int(i) for i in sp1h1 if int(i) < len(s1)]
                 sp1h1_text = " ".join([s1[i] for i in sp1h1])
@@ -280,10 +276,6 @@ def process_esnli_train_and_dev(examples: Dict):
                                                    [sp1h1_text, sp2h1_text],
                                                    explain1)
                            )
-    # for p, q in zip(inputs, targets):
-    #     print(p)
-    #     print(q)
-    #     input()
 
     return inputs, targets
 

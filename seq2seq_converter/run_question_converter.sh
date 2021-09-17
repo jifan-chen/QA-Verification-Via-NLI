@@ -25,7 +25,7 @@ fi
 
 if [[ ! -d ${converter_extraction_path} ]]; then
     mkdir ${converter_extraction_path}
-    echo "extracting files ..."
+    echo "extracting files from ${question_converter_path} ..."
     tar -xzvf ${question_converter_path} -C ${converter_extraction_path}
 fi
 

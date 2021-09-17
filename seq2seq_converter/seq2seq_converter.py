@@ -626,10 +626,6 @@ def main():
             )
 
         if data_args.task.startswith("esnli"):
-            for data, pred in zip(raw_prediction_dataset, decoded_preds):
-                print('data:', data)
-                print('prediction:', pred)
-                input()
             write_esnli_predictions_out(
                 raw_prediction_dataset,
                 decoded_preds,
