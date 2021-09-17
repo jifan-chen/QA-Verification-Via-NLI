@@ -1,0 +1,5 @@
+transformers==4.3
+allennlp==2.5
+datasets==1.12
+absl-py
+rouge_score
