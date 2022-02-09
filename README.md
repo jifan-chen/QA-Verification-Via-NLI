@@ -48,7 +48,7 @@ Install the dependencies by running
 See [README](https://github.com/jifan-chen/QA-Verification-Via-NLI/tree/master/seq2seq_converter) in seq2seq_converter.
 
 ### NQ-NLI
-coming soon
+To run the pre-trained NQ-NLI model, simply run `bash scripts/run_nq_nli_prediction.sh`. The pre-trained Roberta-based model and dataset will be automatically downloaded and the predictions will be saved as ${dataset_path}-predictions.csv and ${dataset_path}-predictions.json.
 
 ## Contact 
 
