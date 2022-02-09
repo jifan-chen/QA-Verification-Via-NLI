@@ -3,3 +3,6 @@ allennlp==2.5
 datasets==1.12
 absl-py
 rouge_score
+methodtools
+py-rouge
+pyrouge
