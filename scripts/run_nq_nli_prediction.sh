@@ -17,7 +17,7 @@ if [[ ! -f ${dataset_path} ]]; then
 fi
 
 if [[ ! -f ${qa_nli_model_path} ]]; then
-    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1VtgQpm15T1xrudKwQAnfOeBZ16ZCdaSt' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1VtgQpm15T1xrudKwQAnfOeBZ16ZCdaSt" -O "${qa_nli_model_path}" && rm -rf /tmp/cookies.txt
+    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1fhP7BEV47XAC6-vHF8euOLmRW6YH3a50' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1fhP7BEV47XAC6-vHF8euOLmRW6YH3a50" -O "${qa_nli_model_path}" && rm -rf /tmp/cookies.txt
 fi
 
 output_csv=${dataset_path}-predictions.csv

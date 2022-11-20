@@ -23,7 +23,7 @@ if [[ ! -f ${dataset_path} ]]; then
 fi
 
 if [[ ! -f ${decontextualizer_3b_path} ]]; then
-    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1LNjhjxP6Lamb7YP7x7gTKmd60HIDE4Tr' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1LNjhjxP6Lamb7YP7x7gTKmd60HIDE4Tr" -O "${decontextualizer_3b_path}" && rm -rf /tmp/cookies.txt
+    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1KP2wixv8unt3HZPlQUphC2d6p8SKovWU' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1KP2wixv8unt3HZPlQUphC2d6p8SKovWU" -O "${decontextualizer_3b_path}" && rm -rf /tmp/cookies.txt
 fi
 
 

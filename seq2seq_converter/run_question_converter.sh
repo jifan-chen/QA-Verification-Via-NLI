@@ -20,7 +20,7 @@ if [[ ! -f ${dataset_path} ]]; then
 fi
 
 if [[ ! -f ${question_converter_path} ]]; then
-    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1zQEKSIuJmX08FxE5JYLwnj4v5Y8TbtYz' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1zQEKSIuJmX08FxE5JYLwnj4v5Y8TbtYz" -O "${question_converter_path}" && rm -rf /tmp/cookies.txt
+    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Il5_BHnW9Rf0T72KF2JHBIA87Lzu-F7i' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Il5_BHnW9Rf0T72KF2JHBIA87Lzu-F7i" -O "${question_converter_path}" && rm -rf /tmp/cookies.txt
 fi
 
 if [[ ! -d ${converter_extraction_path} ]]; then
